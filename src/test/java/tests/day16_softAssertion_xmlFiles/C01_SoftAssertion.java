@@ -42,25 +42,20 @@ public class C01_SoftAssertion {
 
         // testotomasyonu anasayfaya gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
-
         SoftAssert softAssert = new SoftAssert();
 
         // Title'in Test icerdigini test edin
         String expectedTitleIcerik = "Test";
         String actualTitle = Driver.getDriver().getTitle();
-
         softAssert.assertTrue(actualTitle.contains(expectedTitleIcerik),"Title Test icermiyor");
 
         // url'in https://www.testotomasyonu.com oldugunu test edin
-
         String expectedUrl = "https://www.testotomasyonu.com/";
         String actualUrl = Driver.getDriver().getCurrentUrl();
-
         softAssert.assertEquals(actualUrl,expectedUrl,"Url beklenenden farkli");
 
         // arama kutusunun kullanilabilir durumda oldugunu test edin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
-
         softAssert.assertTrue(testOtomasyonuPage.aramaKutusu.isEnabled(),"Arama kutusu kullanilamiyor");
 
         // belirlenmis aranacak kelimeyi aratip urun bulundugunu test edin
@@ -69,19 +64,14 @@ public class C01_SoftAssertion {
                 .sendKeys(ConfigReader.getProperty("toAranacakKelime") + Keys.ENTER);
 
         int bulunanSonucSayisi = testOtomasyonuPage.bulunanUrunElementleriList.size();
-
         softAssert.assertTrue(bulunanSonucSayisi>0,"Kayitli kelime arandiginda urun bulunamadi");
 
         // Nutella aratip, urun bulunamadigini test edin
-
         testOtomasyonuPage.aramaKutusu.clear();
-
         testOtomasyonuPage.aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
         bulunanSonucSayisi = testOtomasyonuPage.bulunanUrunElementleriList.size();
-
         softAssert.assertTrue(bulunanSonucSayisi==0,"Nutella bulundu");
-
         softAssert.assertAll();
 
         // sayfayi kapatin

@@ -34,4 +34,16 @@ public class ZeroPage {
 
     @FindBy(id = "pc_currency")
     public WebElement pcCurrencyDropdownElementi;
+
+    @FindBy(id = "sp_amount")
+    public WebElement   amountKutusu;
+
+    @FindBy(id = "sp_date")
+    public WebElement tarihKutusu;
+
+    @FindBy(id = "pay_saved_payees")
+    public WebElement payButonu;
+
+    @FindBy(id = "alert_content")
+    public WebElement paymentSuccessfullyText;
 }

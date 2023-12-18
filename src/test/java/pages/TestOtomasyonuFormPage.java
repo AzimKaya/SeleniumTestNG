@@ -27,4 +27,9 @@ public class TestOtomasyonuFormPage {
 
     @FindBy(id = "hastalikCheck7")
     public WebElement epilepsiCheckboxKutusu;
+
+
+
+
+
 }

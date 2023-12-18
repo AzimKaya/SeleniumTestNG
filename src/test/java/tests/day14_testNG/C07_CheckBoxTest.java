@@ -16,6 +16,11 @@ public class C07_CheckBoxTest {
         Driver.getDriver().get("https://testotomasyonu.com/form");
         //	b. Sirt Agrisi ve Carpinti checkbox’larini secin
         TestOtomasyonuFormPage testOtomasyonuFormPage = new TestOtomasyonuFormPage();
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
         testOtomasyonuFormPage.carpintiCheckboxKutusu.click();
         testOtomasyonuFormPage.sirtAgrisiCheckboxKutusu.click();
 
@@ -26,8 +31,10 @@ public class C07_CheckBoxTest {
 
         //	d. Seker ve Epilepsi checkbox’larininin seçili olmadigini test edin
 
-        Actions actions = new Actions(Driver.getDriver());
+        actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
         ReusableMethods.bekle(1);
 
         Assert.assertFalse(testOtomasyonuFormPage.epilepsiCheckboxKutusu.isSelected());

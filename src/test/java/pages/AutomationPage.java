@@ -5,9 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AutomationexercisePage {
+import java.util.prefs.BackingStoreException;
 
-    AutomationexercisePage(){
+public class AutomationPage {
+
+   public AutomationPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -56,6 +58,28 @@ public class AutomationexercisePage {
 
     @FindBy(xpath = "//*[text()='Continue']")
     public WebElement continueLinki;
+
+    @FindBy(xpath = "//*[text()='Login to your account']")
+    public WebElement  LogintoyouraccountText;
+
+    @FindBy(xpath = "//*[text()='Your email or password is incorrect!']")
+    public WebElement YouremailorpasswordisincorrectText;
+
+    @FindBy(xpath = "//button[@class='btn btn-success close-modal btn-block']")
+    public WebElement ContinueShopping;
+
+    @FindBy(xpath = "//*[@class='searchform']")
+   public WebElement subscriptionText;
+
+    @FindBy(xpath = "//a[@id='scrollUp']")
+    public WebElement arrowUpwart;// turuncu yukarı ok butonu
+
+    @FindBy(xpath = "(//div[@class='item active'])[1]")
+    public WebElement autoEnginerText;//Full-Fledged practice website for Automation Engineers text
+
+
+
+
 
 
 

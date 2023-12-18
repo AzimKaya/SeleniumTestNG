@@ -15,6 +15,7 @@ public class C05_PageClassKullanimi {
         // testotomasyonu anasayfaya gidin
         Driver.getDriver().get("https://www.testotomasyonu.com");
         ReusableMethods.bekle(3);
+
         // phone icin arama yapin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
         testOtomasyonuPage.aramaKutusu.sendKeys("phone" + Keys.ENTER);

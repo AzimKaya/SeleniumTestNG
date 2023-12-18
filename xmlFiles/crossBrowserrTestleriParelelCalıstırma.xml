@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="CrossBrovser testler">
+
+
+    <test name="Chrome ile calısacak testler" parallel="tests" thread-count="2">
+        <parameter name="crosBrowser" value="chrome"></parameter>
+
+        <packages>
+
+            <package name="tests.day17_crosBrowserCalısacakTestler"></package>
+        </packages>
+
+    </test>
+
+
+
+    <test name="Edge ile calısacak testler">
+        <parameter name="crosBrowser" value="Edge"></parameter>
+
+        <packages>
+
+            <package name="tests.day17_crosBrowserCalısacakTestler"></package>
+        </packages>
+
+    </test>
+
+
+</suite>

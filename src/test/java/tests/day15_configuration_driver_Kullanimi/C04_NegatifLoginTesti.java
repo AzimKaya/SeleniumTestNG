@@ -23,6 +23,7 @@ public class C04_NegatifLoginTesti {
         // 1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
         ReusableMethods.bekle(1);
+
         // 2- account linkine basin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
         testOtomasyonuPage.accountLinki.click();

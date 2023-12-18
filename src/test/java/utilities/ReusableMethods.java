@@ -8,9 +8,11 @@ import org.openqa.selenium.WebElement;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -70,12 +72,10 @@ public class ReusableMethods {
 
     public static void tumSayfaTakeScreenshot(WebDriver driver){
         // tum sayfanin fotografini cekip kaydedin
-
         // 1.adim tss objesi olustur
 
         TakesScreenshot tss = (TakesScreenshot) driver;
-
-        // 2.adim fotografi kaydedecegimiz dosya yolu ile bir File olusturalim
+        //   2.adim fotografi kaydedecegimiz dosya yolu ile bir File olusturalim
         //   her yeni kaydedilen resmin oncekinin ustune kaydedilmemesi icin
         //   kaydedilecek dosya yolunu dinamik yapabiliriz
         //   dinamik yapmak icin dosya yoluna tarih etiketi ekleyelim
@@ -89,11 +89,9 @@ public class ReusableMethods {
         File tumSayfaScreenshot = new File(dinamikDosyaYolu);
 
         // 3.adim tss objesini kullanarak fotografi cekip, gecici bir dosyaya kaydedelim
-
         File geciciDosya = tss.getScreenshotAs(OutputType.FILE);
 
         // 4.adim : gecici dosyayi, asil dosyaya kopyalayalim
-
         try {
             FileUtils.copyFile(geciciDosya,tumSayfaScreenshot);
         } catch (IOException e) {
@@ -143,7 +141,6 @@ public class ReusableMethods {
     public static void istenenWebelementScreenshot(WebElement istenenWebelement){
 
         // 1.adim screenshot alacagimiz webelementi locate et
-
         // 2.adim scrennshot'i kaydedecegimiz file'i olusturalim
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter istenenFormat = DateTimeFormatter.ofPattern("yyMMddHHmmss");
@@ -155,7 +152,6 @@ public class ReusableMethods {
         File istenenWebelementScreenshot = new File(dinamikDosyaYolu);
 
         // 3.adim webelement uzerinden screenshot'i alip gecici bir dosyaya kaydedin
-
         File geciciDosya = istenenWebelement.getScreenshotAs(OutputType.FILE);
 
         // 4.adim gecici dosyayi asil dosyaya kopyalayalim
@@ -169,4 +165,25 @@ public class ReusableMethods {
 
 
     }
+
+
+    public static String getScreenshot(String name) throws IOException {
+        // naming the screenshot with the current date to avoid duplication
+        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        // TakesScreenshot is an interface of selenium that takes the screenshot
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        // full path to the screenshot location
+        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
+        File finalDestination = new File(target);
+        // save the screenshot to the path given
+        FileUtils.copyFile(source, finalDestination);
+        return target;
+    }
+
+
+
+
 }
+
+

@@ -68,3 +68,13 @@ softAssert.assertEquals(actualUrl,expectedUrl,"home page is not visible");
 
 
 }
+/*
+
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/AzimKaya/SeleniumTestNG.git
+git push -u origin main
+ */
