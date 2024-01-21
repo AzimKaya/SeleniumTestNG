@@ -22,21 +22,18 @@ public class C06_HardAssertion {
         Assert.assertTrue(actualTitle.contains(expectedTitleIcerik));
 
         // url'in https://www.testotomasyonu.com oldugunu test edin
-
         String expectedUrl = "https://www.testotomasyonu.com/";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(actualUrl,expectedUrl);
 
         // arama kutusunun kullanilabilir durumda oldugunu test edin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
-
         Assert.assertTrue(testOtomasyonuPage.aramaKutusu.isEnabled());
 
         // belirlenmis aranacak kelimeyi aratip urun bulundugunu test edin
         testOtomasyonuPage
                 .aramaKutusu
                 .sendKeys(ConfigReader.getProperty("toAranacakKelime") + Keys.ENTER);
-
         int bulunanSonucSayisi = testOtomasyonuPage.bulunanUrunElementleriList.size();
         Assert.assertTrue(bulunanSonucSayisi>0);
 
@@ -44,12 +41,12 @@ public class C06_HardAssertion {
         ReusableMethods.bekle(2);
         testOtomasyonuPage.aramaKutusu.clear();
         testOtomasyonuPage.aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         bulunanSonucSayisi = testOtomasyonuPage.bulunanUrunElementleriList.size();
         Assert.assertTrue(bulunanSonucSayisi==0);
 
         // sayfayi kapatin
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
     }
 }

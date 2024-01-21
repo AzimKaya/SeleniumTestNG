@@ -27,16 +27,19 @@ public class C04_NegatifLoginTesti {
         // 2- account linkine basin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
         testOtomasyonuPage.accountLinki.click();
+
         // 3-  3 farkli test method’u olusturun.
         //	- gecerli username, gecersiz password
         testOtomasyonuPage.emailKutusu.sendKeys(ConfigReader.getProperty("toGecerliEmail"));
         testOtomasyonuPage.passwordKutusu.sendKeys(ConfigReader.getProperty("toGecersizPassword"));
+
         //4- Login butonuna basarak login olun
         ReusableMethods.bekle(1);
         testOtomasyonuPage.loginButonu.click();
+
         //5- Basarili olarak giris yapilamadigini test edin
         Assert.assertTrue(testOtomasyonuPage.emailKutusu.isDisplayed());
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
     }
 
@@ -45,40 +48,48 @@ public class C04_NegatifLoginTesti {
         // 1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
         ReusableMethods.bekle(1);
+
         // 2- account linkine basin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
         testOtomasyonuPage.accountLinki.click();
         // 3-  3 farkli test method’u olusturun.
+
         //	- gecersiz username, gecerli password
         testOtomasyonuPage.emailKutusu.sendKeys(ConfigReader.getProperty("toGecersizEmail"));
         testOtomasyonuPage.passwordKutusu.sendKeys(ConfigReader.getProperty("toGecerliPassword"));
+
         //4- Login butonuna basarak login olun
         ReusableMethods.bekle(1);
         testOtomasyonuPage.loginButonu.click();
+
         //5- Basarili olarak giris yapilamadigini test edin
         Assert.assertTrue(testOtomasyonuPage.emailKutusu.isDisplayed());
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 1)
     public void gecersizEmailGecersizPasswordTesti(){
         // 1- https://www.testotomasyonu.com/ anasayfasina gidin
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
         ReusableMethods.bekle(1);
+
         // 2- account linkine basin
         TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
         testOtomasyonuPage.accountLinki.click();
+
         // 3-  3 farkli test method’u olusturun.
         //	- gecersiz username, gecersiz password
         testOtomasyonuPage.emailKutusu.sendKeys(ConfigReader.getProperty("toGecersizEmail"));
         testOtomasyonuPage.passwordKutusu.sendKeys(ConfigReader.getProperty("toGecersizPassword"));
+
         //4- Login butonuna basarak login olun
         ReusableMethods.bekle(1);
         testOtomasyonuPage.loginButonu.click();
+
         //5- Basarili olarak giris yapilamadigini test edin
         Assert.assertTrue(testOtomasyonuPage.emailKutusu.isDisplayed());
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         Driver.closeDriver();
     }
 

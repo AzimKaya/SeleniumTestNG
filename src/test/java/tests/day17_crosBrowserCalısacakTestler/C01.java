@@ -21,6 +21,7 @@ public class C01 extends TestBaseCross {
         //phone icin arama yapin
         WebElement aramaKutusu= driver.findElement(By.id("global-search"));
         aramaKutusu.sendKeys("phone"+ Keys.ENTER);
+
         //Arama sonucunda urun bulunabildigini test edin
         List<WebElement> bulunanUrunElementleriList=driver
                 .findElements(By.xpath("//div[@class= 'product-box my-2  py-1']"));

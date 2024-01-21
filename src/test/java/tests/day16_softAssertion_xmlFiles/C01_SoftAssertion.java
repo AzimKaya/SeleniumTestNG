@@ -62,7 +62,6 @@ public class C01_SoftAssertion {
         testOtomasyonuPage
                 .aramaKutusu
                 .sendKeys(ConfigReader.getProperty("toAranacakKelime") + Keys.ENTER);
-
         int bulunanSonucSayisi = testOtomasyonuPage.bulunanUrunElementleriList.size();
         softAssert.assertTrue(bulunanSonucSayisi>0,"Kayitli kelime arandiginda urun bulunamadi");
 
