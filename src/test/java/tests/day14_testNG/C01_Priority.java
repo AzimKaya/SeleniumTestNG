@@ -1,3 +1,4 @@
+
 package tests.day14_testNG;
 
 import org.testng.annotations.Test;
@@ -20,6 +21,8 @@ public class C01_Priority {
     public void amazonTesti(){
         System.out.println("Amazon testi PASSED");
     }
+
+// Dikkat edilecek yerimiz
 
     @Test(priority = 2)
     public void testOtomasyonuTesti(){
