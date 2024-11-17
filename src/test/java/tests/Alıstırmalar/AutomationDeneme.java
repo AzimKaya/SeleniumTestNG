@@ -14,7 +14,7 @@ public class AutomationDeneme {
         Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
 
 
-        //     3. Verify that home page is visible successfully
+        //     3. Verify that home page is visible successfully.
         String expectedUrl="https://automationexercise.com/";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(actualUrl,expectedUrl);
