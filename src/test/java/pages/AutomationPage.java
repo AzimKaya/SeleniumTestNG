@@ -107,7 +107,7 @@ public class AutomationPage {
 
 //
 
- //Test20
+ //Test20.
 @FindBy(xpath = "//i[@class='material-icons card_travel']")
  public WebElement  ProductsClick;
 
