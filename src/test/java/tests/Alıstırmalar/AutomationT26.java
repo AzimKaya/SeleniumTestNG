@@ -15,7 +15,7 @@ public class AutomationT26 {
     public void automationT26(){
 
         //1. Launch browser.
-        //2. Navigate to url 'http://automationexercise.com'
+        //2. Navigate to url. 'http://automationexercise.com'
         AutomationPage automationPage=new AutomationPage();
         Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
 
