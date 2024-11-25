@@ -17,7 +17,7 @@ public class AutomationT18 {
 
 
 /*
-1. Launch browser
+1. Launch browser.
 2. Navigate to url 'http://automationexercise.com'
 3. Verify that categories are visible on left side bar
 4. Click on 'Women' category.
